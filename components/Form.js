@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { StyledButton } from "./StyledButton.js";
+import styled from 'styled-components';
+import { StyledButton } from './StyledButton.js';
 
 const FormContainer = styled.form`
   display: grid;
@@ -35,33 +35,13 @@ export default function Form({ onSubmit, formName, defaultData }) {
   return (
     <FormContainer aria-labelledby={formName} onSubmit={handleSubmit}>
       <Label htmlFor="name">Name</Label>
-      <Input
-        id="name"
-        name="name"
-        type="text"
-        defaultValue={defaultData?.name}
-      />
+      <Input id="name" name="name" type="text" defaultValue={defaultData?.name} required />
       <Label htmlFor="image-url">Image Url</Label>
-      <Input
-        id="image-url"
-        name="image"
-        type="text"
-        defaultValue={defaultData?.image}
-      />
+      <Input id="image-url" name="image" type="text" defaultValue={defaultData?.image} />
       <Label htmlFor="location">Location</Label>
-      <Input
-        id="location"
-        name="location"
-        type="text"
-        defaultValue={defaultData?.location}
-      />
+      <Input id="location" name="location" type="text" defaultValue={defaultData?.location} required />
       <Label htmlFor="map-url">Map Url</Label>
-      <Input
-        id="map-url"
-        name="mapURL"
-        type="text"
-        defaultValue={defaultData?.mapURL}
-      />
+      <Input id="map-url" name="mapURL" type="text" defaultValue={defaultData?.mapURL} required />
       <Label htmlFor="description">Description</Label>
       <Textarea
         name="description"
@@ -70,9 +50,7 @@ export default function Form({ onSubmit, formName, defaultData }) {
         rows="10"
         defaultValue={defaultData?.description}
       ></Textarea>
-      <StyledButton type="submit">
-        {defaultData ? "Update place" : "Add place"}
-      </StyledButton>
+      <StyledButton type="submit">{defaultData ? 'Update place' : 'Add place'}</StyledButton>
     </FormContainer>
   );
 }
