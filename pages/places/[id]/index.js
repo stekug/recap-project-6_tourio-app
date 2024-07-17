@@ -43,8 +43,13 @@ export default function DetailsPage() {
     return <h2>Page not Found</h2>;
   }
 
-  function deletePlace() {
-    console.log('deleted?');
+  async function deletePlace() {
+    const response = await fetch(`/api/places/${id}`, {
+      method: 'DELETE',
+    });
+    if (response.ok) {
+      router.push('/');
+    }
   }
 
   return (
